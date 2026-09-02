@@ -1,0 +1,11 @@
+VkApplicationInfo appInfo{};
+appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
+appInfo.pApplicationName = "BloxRealms v0.0.1 Alpha Test Snapshot 001";
+appInfo.apiVersion = VK_API_VERSION_1_2;
+VkInstanceCreateInfo ci{};
+ci.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
+ci.pApplicationInfo = &appInfo;
+ci.enabledExtensionCount = static_cast<uint32_t>(extenstions.size());
+ci.ppEnabledExtenstionsNames = extenstion.data();
+VkInstance instance;
+vkCreateInstance(&ci, nullptr, &instance);
